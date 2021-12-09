@@ -9,9 +9,9 @@ function App() {
     <Router>
        <Header />
       <div className="App">
-
-        Async Redux Project
-       <BookList/> 
+        <Switch>
+          <Route exact path="/" component={BookList}/>
+        </Switch>
       </div>
     </Router>
   );

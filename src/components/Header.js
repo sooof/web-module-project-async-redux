@@ -8,28 +8,21 @@ import '../CSS/Header.css';
 
 const Header = (props) => {
     const [input, setInput] = useState()
-    console.log("Header props",props)
+    // console.log("Header props",props)
     const {apikey, books, dispatch} = props
     const handleChange = (event) => {
         const searchName = event.target.value
         setInput(searchName)
-        console.log("Header.js -- handleChange : ", searchName)
+        // console.log("Header.js -- handleChange : ", searchName)
     }
 
-    // useEffect(()=>{
-    //     console.log(books)
-    //     axios.get(`https://www.googleapis.com/books/v1/volumes?q=dog&key=${apikey}&maxResults=40`)
-    //         .then( resp=> {
-    //         console.log(resp)
-    //         // setResult(resp.data.items)
-    //         }) 
-    // },[])
+
     const handleSubmit = (e) => {
         e.preventDefault()
         // console.log(books)
         axios.get(`https://www.googleapis.com/books/v1/volumes?q=${input}&key=${apikey}&maxResults=40`)
             .then( resp=> {
-            console.log(resp)
+            // console.log(resp)
             // setResult(resp.data.items)
                 dispatch(fetchSuccess(resp.data.items))
             })
@@ -58,7 +51,7 @@ const Header = (props) => {
 }
 
 const mapStateToProps = (state) => {
-    console.log("Header currentState:", state)
+    // console.log("Header currentState:", state)
     return {
         books: state.books,
         // input: state.input,
