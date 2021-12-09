@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
+import BookList from './components/BookList';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <div className="App">
 
         Async Redux Project
+       <BookList/> 
       </div>
     </Router>
   );
